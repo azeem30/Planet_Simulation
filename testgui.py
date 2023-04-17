@@ -14,7 +14,6 @@ class Ui_main_window(object):
         main_window.setStyleSheet("")
         self.img = QtWidgets.QLabel(main_window)
         self.img.setGeometry(QtCore.QRect(0, 0, 781, 381))
-        self.img.setStyleSheet("background-image: url(:/newPrefix/space.jpg);")
         self.img.setText("")
         self.img.setPixmap(QtGui.QPixmap("space.jpg"))
         self.img.setScaledContents(True)

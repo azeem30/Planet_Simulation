@@ -1,5 +1,0 @@
-<RCC>
-  <qresource prefix="newPrefix">
-    <file>space.jpg</file>
-  </qresource>
-</RCC>
