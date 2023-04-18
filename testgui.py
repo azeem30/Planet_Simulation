@@ -1,4 +1,5 @@
 import calendargui
+import display_facts
 from PyQt5.QtCore import QTimer, QTime
 from PyQt5 import QtCore, QtGui, QtWidgets
 
@@ -44,6 +45,18 @@ class Ui_main_window(object):
         self.calc.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 0, 0);")
         self.calc.setObjectName("calc")
+        self.facts = QtWidgets.QPushButton(main_window, clicked=self.display_facts)
+        self.facts.setGeometry((QtCore.QRect(10, 330, 50, 28)))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.facts.setFont(font)
+        self.facts.setText("Facts")
+        self.facts.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: rgb(0, 0, 0);")
+        self.facts.setObjectName("facts")
         self.real_time = QtWidgets.QLabel(main_window)
         self.real_time.setGeometry(QtCore.QRect(350, 10, 101, 21))
         font = QtGui.QFont()
@@ -78,6 +91,7 @@ class Ui_main_window(object):
         self.year_label.raise_()
         self.calc.raise_()
         self.real_time.raise_()
+        self.facts.raise_()
         self.year_input.raise_()
         self.open_calendar.raise_()
         self.retranslateUi(main_window)
@@ -109,6 +123,12 @@ class Ui_main_window(object):
             from Solarsystem import main as game
             home_total_days = calendargui.total_days
             game()
+
+    def display_facts(self):
+        self.fact_window = QtWidgets.QWidget()
+        self.facts_ui = display_facts.Ui_facts_window()
+        self.facts_ui.setupUi(self.fact_window)
+        self.fact_window.show()
 
 if __name__ == "__main__":
     import sys
