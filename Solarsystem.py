@@ -96,7 +96,6 @@ class Planet:
 
         if self.mercury:
             win.blit(self.mercury_label, (x, y-30))
-            pygame.draw.rect(win, DARK_GREY, self.mercury_label.get_rect(), 2)
 
         if self.venus:
             win.blit(self.venus_label, (x, y-35))

@@ -96,9 +96,15 @@ class Ui_main_window(object):
         self.cal_window.show()
 
     def calculate(self):
-        from Solarsystem import main as game
-        home_total_days = calendargui.total_days
-        game()
+        if not self.year_input.text():
+            message_box = QtWidgets.QMessageBox()
+            message_box.setText("The input field cannot be empty!\n Please select a date.")
+            message_box.setWindowTitle("Error")
+            message_box.exec_()
+        else:
+            from Solarsystem import main as game
+            home_total_days = calendargui.total_days
+            game()
 
 if __name__ == "__main__":
     import sys
