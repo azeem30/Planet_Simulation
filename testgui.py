@@ -86,6 +86,9 @@ class Ui_main_window(object):
     def retranslateUi(self, main_window):
         _translate = QtCore.QCoreApplication.translate
         main_window.setWindowTitle(_translate("main_window", "Planet Position Prediction"))
+        home_logo_map = QtGui.QPixmap("earth_icon.png")
+        home_logo = QtGui.QIcon(home_logo_map)
+        main_window.setWindowIcon(home_logo)
         self.year_label.setText(_translate("main_window", "Year"))
         self.calc.setText(_translate("main_window", "Calculate"))
 
@@ -97,6 +100,7 @@ class Ui_main_window(object):
 
     def calculate(self):
         if not self.year_input.text():
+            # if the input field is empty
             message_box = QtWidgets.QMessageBox()
             message_box.setText("The input field cannot be empty!\n Please select a date.")
             message_box.setWindowTitle("Error")

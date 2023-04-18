@@ -31,6 +31,9 @@ class Ui_calendar_window(object):
     def retranslateUi(self, calendar_window):
         _translate = QtCore.QCoreApplication.translate
         calendar_window.setWindowTitle(_translate("calendar_window", "Calendar"))
+        logo_map = QtGui.QPixmap("cal_logo.png")
+        cal_icon = QtGui.QIcon(logo_map)
+        calendar_window.setWindowIcon(cal_icon)
         self.ok.setText(_translate("calendar_window", "OK"))
 
     def grab_date(self):

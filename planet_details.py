@@ -121,6 +121,9 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Planet Details"))
+        details_logo_map = QtGui.QPixmap("details_logo.png")
+        details_logo = QtGui.QIcon(details_logo_map)
+        Form.setWindowIcon(details_logo)
         self.planet_name.setText(_translate("Form", "Planet"))
         self.planet_mass.setText(_translate("Form", "Mass"))
         self.planet_radius.setText(_translate("Form", "Radius"))
