@@ -8,15 +8,15 @@ with open("facts.txt", "r") as fact_file:
     selected_facts = random.sample(all_facts, 5)
     for fact in selected_facts:
         string_f = selected_facts[selected_facts.index(fact)]
-        string_fact += string_f
+        string_fact += string_f + "\n"
 
 class Ui_facts_window(object):
     def setupUi(self, facts_window):
         facts_window.setObjectName("facts_window")
-        facts_window.resize(624, 288)
+        facts_window.resize(624, 400)
         facts_window.setStyleSheet("background-color: rgb(0, 0, 0);")
         self.facts_label = QtWidgets.QLabel(facts_window)
-        self.facts_label.setGeometry(QtCore.QRect(20, 20, 581, 241))
+        self.facts_label.setGeometry(QtCore.QRect(20, 20, 581, 400))
         self.facts_label.setStyleSheet("color: rgb(255, 255, 255);")
         font = QtGui.QFont()
         font.setFamily("Arial")
